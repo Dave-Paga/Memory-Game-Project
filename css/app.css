@@ -1,0 +1,320 @@
+html {
+    box-sizing: border-box;
+}
+
+*,
+*::before,
+*::after {
+    box-sizing: inherit;
+}
+
+html,
+body {
+    width: 100%;
+    height: 100%;
+    margin: 0;
+    padding: 0;
+}
+
+body {
+    background: #ffffff url('../img/geometry2.png'); /* Background pattern from Subtle Patterns */
+    font-family: 'Coda', cursive;
+}
+
+.container {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    flex-direction: column;
+}
+
+h1 {
+    font-family: 'Open Sans', sans-serif;
+    font-weight: 300;
+}
+
+/*
+ * Card animations
+ */
+
+@keyframes flip {
+    20% {
+        /* multiple browser support */
+        -moz-animation: rotateY(80deg);
+        -webkit-animation: rotateY(80deg);
+        -o-animation: rotateY(80deg);
+        -ms-animation: rotateY(80deg);
+        animation: rotateY(80deg);
+        transform: rotateY(80deg);
+    }
+    40% {
+        -moz-animation: rotateY(60deg);
+        -webkit-animation: rotateY(60deg);
+        -o-animation: rotateY(60deg);
+        -ms-animation: rotateY(60deg);
+        animation: rotateY(60deg);
+        transform: rotateY(60deg);
+    }
+    60% {
+        -moz-animation: rotateY(45deg);
+        -webkit-animation: rotateY(45deg);
+        -o-animation: rotateY(45deg);
+        -ms-animation: rotateY(45deg);
+        animation: rotateY(45deg);
+        transform: rotateY(45deg);
+    }
+    80% {
+        -moz-animation: rotateY(30deg);
+        -webkit-animation: rotateY(30deg);
+        -o-animation: rotateY(30deg);
+        -ms-animation: rotateY(30deg);
+        animation: rotateY(30deg);
+        transform: rotateY(30deg);
+    }
+    100% {
+        transform: none;
+    }
+}
+
+@keyframes flip2 {
+    20% {
+        -moz-transform: rotateY(80deg);
+        -webkit-transform: rotateY(80deg);
+        -o-transform: rotateY(80deg);
+        -ms-transform: rotateY(80deg);
+        transform: rotateY(80deg);
+    }
+    40% {
+        -moz-transform: rotateY(60deg);
+        -webkit-transform: rotateY(60deg);
+        -o-transform: rotateY(60deg);
+        -ms-transform: rotateY(60deg);
+        transform: rotateY(60deg);
+    }
+    60% {
+        -moz-transform: rotateY(45deg);
+        -webkit-transform: rotateY(45deg);
+        -o-transform: rotateY(45deg);
+        -ms-transform: rotateY(45deg);
+        transform: rotateY(45deg);
+    }
+    80% {
+        -moz-transform: rotateY(30deg);
+        -webkit-transform: rotateY(30deg);
+        -o-transform: rotateY(30deg);
+        -ms-transform: rotateY(30deg);
+        transform: rotateY(30deg);
+    }
+    100% {
+        transform: none;
+    }
+}
+
+@keyframes wobble {
+    20% {
+        -moz-transform: translateX(15px);
+        -webkit-transform: translateX(15px);
+        -o-transform: translateX(15px);
+        -ms-transform: translateX(15px);
+        transform: translateX(15px);
+    }
+    40% {
+        -moz-transform: translateX(-15px);
+        -webkit-transform: translateX(-15px);
+        -o-transform: translateX(-15px);
+        -ms-transform: translateX(-15px);
+        transform: translateX(-15px);
+    }
+    60% {
+        -moz-transform: translateX(5px);
+        -webkit-transform: translateX(5px);
+        -o-transform: translateX(5px);
+        -ms-transform: translateX(5px);
+        transform: translateX(5px);
+    }
+    80% {
+        -moz-transform: translateX(-5px);
+        -webkit-transform: translateX(-5px);
+        -o-transform: translateX(-5px);
+        -ms-transform: translateX(-5px);
+        transform: translateX(-5px);
+    }
+    100% {
+        transform: none;
+    }
+}
+
+@keyframes jiggle {
+    20% {
+        -moz-transform: scale(0.9, 1.1);
+        -webkit-transform: scale(0.9, 1.1);
+        -o-transform:scale(0.9, 1.1);
+        -ms-transform: scale(0.9, 1.1);
+        transform: scale(0.9, 1.1);
+    }
+    40% {
+        -moz-transform: scale(1.1, 0.9);
+        -webkit-transform: scale(1.1, 0.9);
+        -o-transform:scale(1.1, 0.9));
+        -ms-transform: scale(1.1, 0.9);
+        transform: scale(1.1, 0.9);
+    }
+    60% {
+        -moz-transform: scale(0.95, 1.05);
+        -webkit-transform: scale(0.95, 1.05);
+        -o-transform:scale(0.95, 1.05);
+        -ms-transform: scale(0.95, 1.05);
+        transform: scale(0.95, 1.05);
+    }
+    80% {
+        -moz-transform: scale(1.05, 0.95);
+        -webkit-transform: scale(1.05, 0.95);
+        -o-transform:scale(1.05, 0.95));
+        -ms-transform: scale(1.05, 0.95);
+        transform: scale(1.05, 0.95);
+    }
+    100% {
+        transform: none;
+    }
+}
+
+/*
+ * Styles for the deck of cards
+ */
+
+.deck {
+    width: 660px;
+    min-height: 680px;
+    background: linear-gradient(160deg, #02ccba 0%, #aa7ecd 100%);
+    padding: 32px;
+    border-radius: 10px;
+    box-shadow: 12px 15px 20px 0 rgba(46, 61, 73, 0.5);
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: space-between;
+    align-items: center;
+    margin: 0 0 3em;
+}
+
+.deck.preventClicks {
+    pointer-events: none;
+}
+
+.deck .card {
+    -moz-animation: flip 0.2s;
+    -webkit-animation: flip 0.2s;
+    -o-animation: flip 0.2s;
+    -ms-animation: flip 0.2s;
+    animation: flip 0.2s;
+    height: 125px;
+    width: 125px;
+    background: #2e3d49;
+    font-size: 0;
+    color: #ffffff;
+    border-radius: 8px;
+    cursor: pointer;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    box-shadow: 5px 2px 20px 0 rgba(46, 61, 73, 0.5);
+}
+
+.deck .card.open {
+    -moz-animation: flip2 0.2s;
+    -webkit-animation: flip2 0.2s;
+    -o-animation: flip2 0.2s;
+    -ms-animation: flip2 0.2s;
+    animation: flip2 0.2s;
+    cursor: pointer;
+    background: #02b3e4;
+}
+
+.deck .card.show {
+    font-size: 33px;
+}
+
+.deck .card.match {
+    -moz-animation: jiggle 0.5s;
+    -webkit-animation: jiggle 0.5s;
+    -o-animation: jiggle 0.5s;
+    -ms-animation: jiggle 0.5s;
+    animation: jiggle 0.5s;
+    cursor: default;
+    background: #02ccba;
+    font-size: 33px;
+}
+
+.deck .card.wrong {
+    animation: wobble 0.5s 0.2s;
+    cursor: default;
+    background: #ff4000;
+}
+
+/*
+ * Styles for the Score Panel
+ */
+
+.score-panel {
+    text-align: left;
+    width: 345px;
+    margin-bottom: 10px;
+}
+
+.score-panel .stars {
+    margin: 0;
+    padding: 0;
+    display: inline-block;
+    margin: 0 5px 0 0;
+}
+
+.score-panel .stars li {
+    list-style: none;
+    display: inline-block;
+}
+
+.score-panel .restart {
+    float: right;
+    cursor: pointer;
+}
+
+.score-panel .time {
+    padding-left: 4em;
+}
+
+/* Winscreen Overlay */
+.winscreen {
+    height: 100%;
+    width:  100%;
+    position: fixed;
+    overflow: hidden;
+    z-index: 0;
+    display: flex;
+    flex-wrap: wrap;
+    align-items: center;
+    justify-content: center;
+    opacity: 0;
+    transition: 0.5s ease;
+    background: #ffffff url('../img/geometry2.png');
+}
+
+.winscreen .content {
+    position: absolute;
+    justify-content: center;
+    display: flex;
+    flex-wrap: wrap;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+}
+
+.winscreen .fa-check-circle {
+    font-size: 4em;
+    color: #2e3d49;
+}
+
+.winscreen .fa-repeat {
+    margin-top: 2em;
+    font-size: 2em;
+    color: #2e3d49;
+    cursor: pointer;
+}
