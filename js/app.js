@@ -30,20 +30,20 @@ function clickCounter() {
     let matchedCards = document.querySelectorAll('.match');
 
     /* checks moves to remove stars and checks if all cards are matched */
-    if (matchedCards.length === 2) {
+    if (matchedCards.length === 16) {
         countStars();
         wingame()
-    } else if (clicks === 19) {
+    } else if (clicks === 17) {
+        stars.innerHTML += openStar;
+        stars.removeChild(stars.firstElementChild);
+        clicks += 1;
+        moves.innerHTML = clicks
+    } else if (clicks === 24) {
         stars.innerHTML += openStar;
         stars.removeChild(stars.firstElementChild);
         clicks += 1;
         moves.innerHTML = clicks
     } else if (clicks === 29) {
-        stars.innerHTML += openStar;
-        stars.removeChild(stars.firstElementChild);
-        clicks += 1;
-        moves.innerHTML = clicks
-    } else if (clicks === 39) {
         stars.innerHTML += openStar;
         stars.removeChild(stars.firstElementChild);
         clicks += 1;
