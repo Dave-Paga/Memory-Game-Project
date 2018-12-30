@@ -4,4 +4,4 @@ This project is for my Udacity program and is intended to test my current knowle
 
 ## Contributing
 
-Project started from a given starter code: >https://github.com/udacity/fend-project-memory-game
+Project started from a given starter code: https://github.com/udacity/fend-project-memory-game
