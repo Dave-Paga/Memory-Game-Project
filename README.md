@@ -34,7 +34,7 @@ Displays time for the player.
 
 ### Moves
 
-Displays moves that the player done.
+  Displays moves that the player done.
 
 - Below **18** moves gives the player **3 stars**
 - Above **18** moves gives the player **2 stars**
