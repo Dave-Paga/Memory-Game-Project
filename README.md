@@ -20,7 +20,7 @@ Cards can be faced up or down if a player clicks on them
 
 ### Shuffle
 
-Shuffles and flips down all cards and resets, [moves](##moves), [stars](##stars) and [time](##Time).
+Shuffles and flips down all cards and resets, [moves](#moves), [stars](#stars) and [time](#Time).
 
 ### Stars
 
