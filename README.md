@@ -36,10 +36,10 @@ Displays time for the player.
 
 Displays moves that the player done.
 
-- Below **18** moves gives the player **3 stars**
-- Above **18** moves gives the player **2 stars**
-- **25** moves and above gives the player **1 star**
-- **30** moves and above gives the player **no stars**
+- Below **18 moves** gives the player **3 stars**
+- Above **18 moves** gives the player **2 stars**
+- **25 moves** and above gives the player **1 star**
+- **30 moves** and above gives the player **no stars**
 
 #### Card Logic
 
