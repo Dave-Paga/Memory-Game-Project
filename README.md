@@ -43,11 +43,15 @@ Displays moves that the player done.
 
 #### Card Logic
 
-Checks if cards match or not and if the player matched all cards a **[Winscreen](##Winscreen)** will show up.
+Checks if cards match or not and if the player matched all cards a Winscreen will show up.
 
 - Matched cards count as **one move**
 - Wrongly matched cards count as **one move**
 - Flipping down **shown cards** count as **one move**
+
+#### Winscreen
+
+Displays the time completed, moves, and star rating after matching all cards.
 
 ## Contributing
 
