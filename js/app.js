@@ -166,10 +166,6 @@ function matchCards() {
             detectAnimation();
             clickCounter()
         }
-        // } else {
-        //     /* continues code  */
-        //     stopPropagation()
-        // }
     }
 }
 
