@@ -24,7 +24,7 @@ Shuffles and flips down all cards and resets, moves, stars and time.
 
 #### Stars
 
-This serves as the score or the rating for the player depending on performance.
+This serves as the score or the rating for the player depending on their performance.
 
 #### Time
 
