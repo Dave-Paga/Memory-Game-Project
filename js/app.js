@@ -154,6 +154,8 @@ function matchCards() {
                 shownCards[i].classList.remove('open', 'show');
                 shownCards[i].classList.add('match');
             };
+
+            clickCounter();
         /* if no match */
         } else if (card1.isEqualNode(card2) == false) {
             deck.classList.toggle('preventClicks');
@@ -162,10 +164,12 @@ function matchCards() {
                 shownCards[i].classList.add('wrong');
             };
             detectAnimation();
-        } else {
-            /* continues code  */
-            stopPropagation()
+            clickCounter()
         }
+        // } else {
+        //     /* continues code  */
+        //     stopPropagation()
+        // }
     }
 }
 
@@ -208,22 +212,26 @@ function reset() {
 /* shuffle button */
 redo[0].addEventListener('click', reset);
 redo[1].addEventListener('click', reset);
+window.onload = reset();
 
 /* card click event listener */
 deck.addEventListener('click', function (e) {
     let card = document.querySelector('.card');
 
     /* checks if target is a li, an 'i', if its not a match, then shows cards */
-    if (e.target.nodeName === 'LI' && e.target.classList.contains('match') === false) {
+    if (e.target.nodeName === 'LI' && e.target.classList.contains('match') === false
+        && e.target.classList.contains('show') === false) {
         e.target.classList.toggle('open');
         e.target.classList.toggle('show');
-        matchCards();
-        clickCounter()
+        matchCards()
     /* enables user to close shown cards */
     } else if (e.target.nodeName === "I"
-                && e.target.parentElement.classList.contains('match') === false) {
+                && e.target.parentElement.classList.contains('match') === false
+                && e.target.parentElement.classList.contains('open')) {
+        clickCounter();
         e.target.parentElement.classList.remove('open', 'show')
-    } else if (e.target.classList.contains('show') && e.target.classList.contains('open')) {
+    } else if (e.target.classList.contains('show')) {
+        clickCounter();;
         e.target.classList.remove('open', 'show')
     }
 })
