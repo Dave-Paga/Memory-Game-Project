@@ -30,7 +30,7 @@ This serves as the score or the rating for the player depending on performance.
 
 Displays time for the player.
 
--Each minute costs the player **one star**
+- Each minute costs the player **one star**
 
 #### Moves
 
