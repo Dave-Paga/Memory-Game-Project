@@ -53,4 +53,4 @@ Checks if cards match or not and if the player matched all cards a **[Winscreen]
 
 Project started from a given [Starter Code](https://github.com/udacity/fend-project-memory-game)
 
-Fonts and icons came from [Font Awesome](https://fontawesome.com/)
+Icons and background came from [Font Awesome](https://fontawesome.com/)
