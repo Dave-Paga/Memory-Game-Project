@@ -231,7 +231,7 @@ deck.addEventListener('click', function (e) {
         clickCounter();
         e.target.parentElement.classList.remove('open', 'show')
     } else if (e.target.classList.contains('show')) {
-        clickCounter();;
+        clickCounter();
         e.target.classList.remove('open', 'show')
     }
 })
