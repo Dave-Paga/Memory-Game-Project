@@ -6,7 +6,7 @@
 * [Features](#Features)
 * [Contributing](#contributing)
 
-## Descripion
+## Description
 
 This is a simple game memory game made using javascript where you need to match the given cards in order to complete the game.
 
