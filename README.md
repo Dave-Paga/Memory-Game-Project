@@ -57,6 +57,6 @@ Displays the time completed, moves, and star rating after matching all cards.
 
 Project started from a given [Starter Code](https://github.com/udacity/fend-project-memory-game)
 
-Icons and background came from [Font Awesome](https://fontawesome.com/)
+Icons came from [Font Awesome](https://fontawesome.com/)
 
 Shuffle function came from http://stackoverflow.com/a/2450976
