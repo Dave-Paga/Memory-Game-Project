@@ -224,10 +224,8 @@ deck.addEventListener('click', function (e) {
     } else if (e.target.nodeName === "I"
                 && e.target.parentElement.classList.contains('match') === false
                 && e.target.parentElement.classList.contains('open')) {
-        clickCounter();
         e.target.parentElement.classList.remove('open', 'show')
     } else if (e.target.classList.contains('show')) {
-        clickCounter();
         e.target.classList.remove('open', 'show')
     }
 })
