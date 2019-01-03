@@ -8,6 +8,7 @@ const openStar = `<li><i class="fa fa-star-o"></i></li>`;
 let clicks = 0;
 let minute = 0;
 let second = 0;
+let timeInterval = '';
 let starCount = [];
 
 // Shuffle function from http://stackoverflow.com/a/2450976
@@ -33,17 +34,17 @@ function clickCounter() {
     if (matchedCards.length === 16) {
         countStars();
         wingame()
-    } else if (clicks === 17) {
+    } else if (clicks === 7) {
         stars.innerHTML += openStar;
         stars.removeChild(stars.firstElementChild);
         clicks += 1;
         moves.innerHTML = clicks
-    } else if (clicks === 24) {
+    } else if (clicks === 10) {
         stars.innerHTML += openStar;
         stars.removeChild(stars.firstElementChild);
         clicks += 1;
         moves.innerHTML = clicks
-    } else if (clicks === 29) {
+    } else if (clicks === 15) {
         stars.innerHTML += openStar;
         stars.removeChild(stars.firstElementChild);
         clicks += 1;
@@ -55,7 +56,7 @@ function clickCounter() {
 }
 
 /* timer */
-let timer = setInterval(function() {
+function timer() {
     if (second <= 8) {
         second += 1;
         time.innerHTML = `${minute}:0${second}`
@@ -69,7 +70,7 @@ let timer = setInterval(function() {
         second += 1;
         time.innerHTML = `${minute}:${second}`
     }
-}, 1000);
+}
 
 /* identifies kind of stars */
 function countStars() {
@@ -103,22 +104,6 @@ function wingame() {
         document.querySelector('.winText').innerHTML += `You won the game in ${second} seconds, ${clicks + 1} moves, and you have ${one}${two}${three} Stars!`
     } else {
         document.querySelector('.winText').innerHTML += `You won the game in ${minute} minutes and ${second} seconds, ${clicks + 1} moves, and you have ${one}${two}${three} Stars!`
-    }
-}
-
-/* resets stars and score and time */
-function restart() {
-    const star = `<li><i class="fa fa-star"></i></li>`;
-    clicks = 0;
-    moves.innerHTML = clicks;
-    minute = 0;
-    second = 0;
-    time.innerHTML = `${minute}:0${second}`;
-    document.querySelector('.winText').innerHTML = "";
-
-    for (let i = 0; i <= 2; i++) {
-        stars.removeChild(stars.firstElementChild);
-        stars.innerHTML += star
     }
 }
 
@@ -173,6 +158,14 @@ function matchCards() {
 function reset() {
     let cardArray = [];
     let card = document.querySelectorAll('.card');
+    const star = `<li><i class="fa fa-star"></i></li>`;
+    clicks = 0;
+    moves.innerHTML = clicks;
+    minute = 0;
+    second = 0;
+    time.innerHTML = `${minute}:0${second}`;
+    clearInterval(timeInterval);
+    document.querySelector('.winText').innerHTML = "";
 
     /* faces down all cards */
     for (let i = 0; i <= card.length - 1; i++) {
@@ -201,8 +194,11 @@ function reset() {
     winscreen.style.removeProperty('left');
     winscreen.style.opacity = 0;
 
-    /* resets moves and stars */
-    restart()
+    /* resets stars */
+    for (let i = 0; i <= 2; i++) {
+        stars.removeChild(stars.firstElementChild);
+        stars.innerHTML += star
+    }
 }
 
 /* shuffle button */
@@ -227,5 +223,14 @@ deck.addEventListener('click', function (e) {
         e.target.parentElement.classList.remove('open', 'show')
     } else if (e.target.classList.contains('show')) {
         e.target.classList.remove('open', 'show')
+    }
+});
+
+/* starts timer on click */
+deck.addEventListener('click', function(e) {
+    if (timeInterval == 0 && e.target.nodeName === 'LI') {
+        timeInterval = setInterval(timer, 1000)
+    } else {
+        e.stopPropagation()
     }
 })
