@@ -16,8 +16,6 @@ This is a simple game memory game made using javascript where you need to match 
 
 Cards can be faced up or down if a player clicks on them.
 
-- Flipping down **shown cards** count as **one move**
-
 #### Shuffle
 
 Shuffles and flips down all cards and resets, moves, stars and time.
@@ -30,16 +28,17 @@ This serves as the score or the rating for the player depending on their perform
 
 Displays time for the player.
 
+- Time starts only if the player **flips a card**
 - Each minute costs the player **one star**
 
 #### Moves
 
 Displays moves that the player done.
 
-- Below **18 moves** gives the player **3 stars**
-- Above **18 moves** gives the player **2 stars**
-- **25 moves** and above gives the player **1 star**
-- **30 moves** and above gives the player **no stars**
+- Below **8 moves** gives the player **3 stars**
+- Above **8 moves** gives the player **2 stars**
+- **11 moves** and above gives the player **1 star**
+- **16 moves** and above gives the player **no stars**
 
 #### Card Logic
 
@@ -47,7 +46,6 @@ Checks if cards match or not and if the player matched all cards a Winscreen wil
 
 - Matched cards count as **one move**
 - Wrongly matched cards count as **one move**
-- Flipping down **shown cards** count as **one move**
 
 #### Winscreen
 
