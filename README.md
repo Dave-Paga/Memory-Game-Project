@@ -35,7 +35,7 @@ Displays time for the player.
 
 Displays moves that the player done.
 
-- Below **8 moves** gives the player **3 stars**
+- **8 moves** and below gives the player **3 stars**
 - Above **8 moves** gives the player **2 stars**
 - **11 moves** and above gives the player **1 star**
 - **16 moves** and above gives the player **no stars**
