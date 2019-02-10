@@ -53,7 +53,7 @@ Displays the time completed, moves, and star rating after matching all cards.
 
 ## Contributing
 
-Project started from a given [Starter Code](https://github.com/udacity/fend-project-memory-game)
+Code was built from a [Udacity Student Project](https://github.com/udacity/fend-project-memory-game)
 
 Icons came from [Font Awesome](https://fontawesome.com/)
 
